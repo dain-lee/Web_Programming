@@ -2,6 +2,7 @@
 # Introduction
 
 - 서울 관광 지도 및 리뷰 작성 제공하는 웹 사이트.
+- 시연 영상 : https://youtu.be/OUtDeQHJOfA
 
 # Installation
 
