@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/grid.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/search.css">
+    <script src="../js/jquery.rwdImageMaps.min.js"></script>
+    <script src="../js/search.js"></script>
+    <script>
+        $(document).ready(function (e) {
+            $('img[usemap]').rwdImageMaps();
+        })
+    </script>
+    <title>SEOUL TRAVEL</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <nav class="row">
+                <div class="col-2"><a href="../main.html">
+                        <img src="../images/ssss.png" alt="Logo Image" class="header-image">
+                    </a>
+                </div>
+
+                <div class="col-2 dropdown">
+                    <div class="dropbtn">
+                        <h3 class="name-title">지역</h3>
+                        <h4 class="name-title">Area</h4>
+                    </div>
+                    <div class="dropdown-content">
+                        <a href="gangnam.html">강남</a>
+                        <a href="hongdae.html">홍대</a>
+                        <a href="gwanghwamun.html">광화문</a>
+                        <a href="itaewon.html">이태원</a>
+                        <a href="jamsil.html">잠실</a>
+                        <a href="myeongdong.html">명동</a>
+                        <a href="#">기타</a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <a href="events.html">
+                        <h3 class="name-title">문화 행사</h3>
+                        <h4 class="name-title">Events</h4>
+                    </a>
+                </div>
+                <div class="col-2">
+                    <a href="attraction.html">
+                        <h3 class="name-title">관광지</h3>
+                        <h4 class="name-title">Attraction</h4>
+                    </a>
+                </div>
+                <div class="col-2">
+                    <a href="mypage.html">
+                        <h3 class="name-title">마이페이지</h3>
+                        <h4 class="name-title">Mypage</h4>
+                    </a>
+                </div>
+                <div class="col-2">
+                    <a href="../login.html">
+                        <h3 class="name-title">로그인</h3>
+                        <h4 class="name-title">Login</h4>
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        <hr>
+
+        <div class="row">
+            <div class="main-image col-12 center-text">
+                <img src="../images/attraction-title.jpg" sizes="100vw" alt="main image">
+                <div class="main-overlay center-text">
+                    <p class="main-overlay-text">관광지</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="content">
+            <div class="searchPanel">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input id="search" type="text" name="search" placeholder="키워드 검색" class="search-input"
+                        onkeypress="search('attraction')">
+                </div>
+                <div class="category">
+                    <span class="search-title"><strong>분류</strong></span>
+                    <div>
+                        <a href="#" class="category-element" onclick="attraction(12, '')">전체</a>
+                        <a href="#" class="category-element" onclick="attraction(12, 'A02')">인문(문화/예술/역사)</a>
+                        <a href="#" class="category-element" onclick="attraction(12, 'A01')">자연</a>
+                        <a href="#" class="category-element" onclick="attraction(14, '')">문화시설</a>
+                        <a href="#" class="category-element" onclick="attraction(38, '')">쇼핑</a>
+                    </div>
+                </div>
+                <div class="location">
+                    <span class="search-title"><strong>지역</strong></span>
+                    <button type="button" class="location-toggleBtn" onclick="map()">
+                        <span>지도에서 선택</span>
+                        <i class="fas fa-angle-up"></i>
+                    </button>
+                    <div class="location-map">
+                        <img src="../images/map.png" alt="map" usemap="#seoul-map">
+                        <map name="seoul-map">
+                            <area alt="gangnam" title="gangnam" onclick="area(1)"
+                                coords="319,278,323,285,323,297,336,321,336,329,347,339,353,338,358,346,354,352,375,369,381,364,381,361,388,355,395,357,406,353,413,358,423,377,431,375,442,383,451,379,457,364,452,352,443,348,437,331,426,328,420,321,397,312,395,315,387,297,387,288,384,288,369,273,362,271,357,266,338,261,327,269"
+                                shape="poly">
+                            <area alt="gangdong" title="gangdong" onclick="area(2)"
+                                coords="443,250,450,253,453,261,451,272,458,277,461,283,476,294,493,264,495,255,507,248,523,246,532,232,520,208,520,191,510,183,480,203,454,211,445,214,442,223,447,235"
+                                shape="poly">
+                            <area alt="gangbuk" title="gangbuk" onclick="area(3)"
+                                coords="275,104,285,110,298,110,303,121,311,124,317,137,327,138,334,145,341,148,351,138,365,132,363,122,338,99,329,87,320,87,315,79,320,73,318,64,326,59,324,49,316,47,304,24,293,29,282,38,286,53,282,63,271,68,269,80,279,94"
+                                shape="poly">
+                            <area alt="gangseo" title="gangseo" onclick="area(4)"
+                                coords="57,150,89,182,112,193,126,216,143,228,155,234,161,242,157,247,145,245,140,241,127,241,124,254,126,266,118,272,104,274,98,272,96,257,89,255,79,263,68,250,46,257,37,249,22,245,7,228,22,206,25,196,45,180,42,159"
+                                shape="poly">
+                            <area alt="gwanak" title="gwanak" onclick="area(5)"
+                                coords="175,346,178,338,201,332,206,324,215,323,219,331,224,332,228,326,239,326,243,329,249,326,253,331,254,344,260,352,274,354,276,360,284,362,292,376,279,382,273,396,258,400,251,410,225,411,213,405,212,396,206,394,202,384,196,385,191,382,192,374,184,366,183,360,189,356,186,348"
+                                shape="poly">
+                            <area alt="gwang-jin" title="gwang-jin" onclick="area(6)"
+                                coords="429,213,434,218,432,223,437,236,435,248,421,271,409,276,387,278,374,265,380,258,379,251,392,237,391,221,400,207,416,207,424,199,429,197,429,206"
+                                shape="poly">
+                            <area alt="guro" title="guro" onclick="area(7)"
+                                coords="77,293,89,307,91,315,99,312,98,308,111,298,125,301,130,309,138,308,139,296,152,293,166,302,170,329,177,338,176,347,160,347,158,339,149,331,139,329,131,325,121,344,108,342,100,355,83,354,68,348,73,334,72,324,67,315"
+                                shape="poly">
+                            <area alt="geum-cheon" title="geum-cheon" onclick="area(8)"
+                                coords="140,329,150,332,158,340,160,347,175,347,186,349,189,356,183,360,184,366,192,373,194,385,201,385,206,393,193,410,172,410,169,397,152,377,158,370,154,361,144,352"
+                                shape="poly">
+                            <area alt="nowon" title="nowon" onclick="area(9)"
+                                coords="367,23,366,39,361,47,361,56,372,69,373,92,368,100,363,94,356,101,354,113,363,123,364,132,378,142,390,141,410,129,419,135,425,133,428,126,428,121,440,110,437,90,420,85,409,75,409,70,419,65,417,40,422,28,416,19,406,23,398,10,379,20"
+                                shape="poly">
+                            <area alt="dobong" title="dobong" onclick="area(10)"
+                                coords="304,24,315,48,324,49,326,59,317,65,319,74,315,79,321,87,329,87,339,99,354,113,357,101,363,96,368,100,374,92,372,68,362,56,362,47,368,37,367,24,356,16,340,16,335,3,317,1"
+                                shape="poly">
+                            <area alt="dong-daemun" title="dong-daemun" onclick="area(11)"
+                                coords="393,152,378,153,373,162,362,162,350,167,350,174,341,180,339,188,331,195,332,204,341,205,349,200,357,203,364,216,391,222,400,207,400,186,390,180,386,164,392,163,392,158"
+                                shape="poly">
+                            <area alt="dongjak" title="dongjak" onclick="area(12)"
+                                coords="178,339,184,324,200,319,201,308,209,291,224,290,229,285,230,288,246,292,253,299,268,299,274,304,276,315,282,316,284,324,280,329,280,347,275,353,262,354,254,346,254,330,252,326,243,330,237,325,230,325,224,332,221,332,215,324,207,324,201,332"
+                                shape="poly">
+                            <area alt="mapo" title="mapo" onclick="area(13)"
+                                coords="125,197,132,209,147,221,161,227,167,236,186,249,198,255,215,255,224,270,231,271,229,261,237,255,241,261,249,253,248,241,259,234,251,225,232,229,207,227,204,214,185,204,176,195,168,175,150,173,139,182,139,193"
+                                shape="poly">
+                            <area alt="seo-daemun" title="seo-daemun" onclick="area(14)"
+                                coords="176,195,189,184,201,183,220,167,226,153,232,152,238,158,249,164,250,181,246,196,254,202,257,211,251,225,233,230,206,227,203,213,186,206"
+                                shape="poly">
+                            <area alt="seocho" title="seocho" onclick="area(15)"
+                                coords="274,304,276,315,283,317,283,323,279,328,280,347,274,352,276,359,283,362,291,375,298,366,305,368,311,382,330,384,336,370,341,373,343,409,356,415,367,428,388,424,392,407,412,402,412,389,423,378,414,359,406,352,397,357,389,354,382,358,382,363,374,367,357,353,358,345,354,339,345,338,337,329,337,321,324,298,324,286,319,278,311,284,308,293,298,302,286,303"
+                                shape="poly">
+                            <area alt="seong-dong" title="seong-dong" onclick="area(16)"
+                                coords="321,262,319,257,313,255,309,246,320,229,328,224,331,216,327,207,332,203,340,204,349,199,358,201,364,215,391,222,392,237,380,252,380,257,374,266,367,262,363,257,335,253"
+                                shape="poly">
+                            <area alt="seongbuk" title="seongbuk" onclick="area(17)"
+                                coords="268,109,275,104,285,109,298,110,303,122,310,122,317,137,327,137,334,145,340,148,350,137,364,132,379,141,389,141,394,152,379,153,373,162,362,162,351,167,351,174,342,180,339,189,332,195,319,190,310,189,304,183,303,174,297,171,284,173,278,164,284,154,280,134"
+                                shape="poly">
+                            <area alt="songpa" title="songpa" onclick="area(18)"
+                                coords="387,287,387,295,392,312,399,313,420,321,424,326,436,332,442,347,451,352,458,365,468,364,466,354,469,352,489,352,489,339,499,331,502,310,484,307,476,293,462,284,458,277,452,271,453,261,450,253,444,250,428,277,411,285"
+                                shape="poly">
+                            <area alt="yang-cheon" title="yang-cheon" onclick="area(19)"
+                                coords="156,246,146,244,138,239,127,241,124,249,126,265,118,271,104,274,98,271,95,258,89,254,79,262,76,276,77,292,88,305,91,315,98,311,100,305,112,299,126,302,129,306,137,307,140,295,153,292,151,280,158,273,161,265"
+                                shape="poly">
+                            <area alt="yeong-deungpo" title="yeong-deungpo" onclick="area(20)"
+                                coords="160,242,157,247,161,263,158,272,151,279,152,292,164,303,170,328,177,337,184,325,200,318,203,312,200,307,208,289,229,287,228,279,220,279,210,265,196,263,181,257"
+                                shape="poly">
+                            <area alt="yongsan" title="yongsan" onclick="area(21)"
+                                coords="229,271,234,272,237,282,249,284,258,291,272,291,275,295,294,294,301,289,303,280,323,261,321,257,313,255,309,245,281,239,269,231,259,232,248,241,249,252,242,260,238,255,229,261"
+                                shape="poly">
+                            <area alt="eun-pyeong" title="eun-pyeong" onclick="area(22)"
+                                coords="168,175,177,195,188,185,202,183,220,167,225,154,232,152,241,141,237,133,248,118,267,108,252,93,243,76,227,71,208,83,188,91,178,129,168,141,175,166"
+                                shape="poly">
+                            <area alt="jongno" title="jongno" onclick="area(23)"
+                                coords="268,108,281,134,284,154,278,163,283,172,298,171,303,174,305,183,310,189,318,189,332,194,332,202,328,207,316,209,298,207,292,209,285,211,270,207,257,210,253,202,246,195,251,180,247,165,232,152,240,140,236,133,247,118,259,112"
+                                shape="poly">
+                            <area alt="jung" title="jung" onclick="area(24)"
+                                coords="256,211,269,207,282,211,292,211,298,207,317,209,328,207,332,215,329,224,321,229,309,245,280,240,268,232,259,234,251,225"
+                                shape="poly">
+                            <area alt="jung-nang" title="jung-nang" onclick="area(25)"
+                                coords="429,127,426,133,419,134,409,129,389,141,393,152,392,162,385,163,389,180,400,186,400,207,416,207,423,200,428,200,437,188,437,177,447,171,446,133,437,126"
+                                shape="poly">
+                        </map>
+                    </div>
+                </div>
+            </div>
+            <div class="article-list">
+                <ul class="article-element">
+                    <script type="text/javascript">
+                        attraction(12, '');
+                    </script>
+                </ul>
+            </div>
+        </section>
+        <footer>
+            <p>&copy; 숭실대학교 웹프로그래밍 9조</p>
+        </footer>
+    </div>
+</body>
+
+</html>

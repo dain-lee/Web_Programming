@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/grid.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/search.css">
+    <script src="../js/search.js"></script>
+    <title>SEOUL TRAVEL</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <nav class="row">
+                <div class="col-2"><a href="../main.html">
+                        <img src="../images/ssss.png" alt="Logo Image" class="header-image">
+                    </a>
+                </div>
+
+                <div class="col-2 dropdown">
+                    <div class="dropbtn">
+                        <h3 class="name-title">지역</h3>
+                        <h4 class="name-title">Area</h4>
+                    </div>
+                    <div class="dropdown-content">
+                        <a href="gangnam.html">강남</a>
+                        <a href="hongdae.html">홍대</a>
+                        <a href="gwanghwamun.html">광화문</a>
+                        <a href="itaewon.html">이태원</a>
+                        <a href="jamsil.html">잠실</a>
+                        <a href="myeongdong.html">명동</a>
+                        <a href="#">기타</a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <a href="events.html">
+                        <h3 class="name-title">문화 행사</h3>
+                        <h4 class="name-title">Events</h4>
+                    </a>
+                </div>
+                <div class="col-2">
+                    <a href="attraction.html">
+                        <h3 class="name-title">관광지</h3>
+                        <h4 class="name-title">Attraction</h4>
+                    </a>
+                </div>
+                <div class="col-2">
+                    <a href="mypage.html">
+                        <h3 class="name-title">마이페이지</h3>
+                        <h4 class="name-title">Mypage</h4>
+                    </a>
+                </div>
+                <div class="col-2">
+                    <a href="../login.html">
+                        <h3 class="name-title">로그인</h3>
+                        <h4 class="name-title">Login</h4>
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        <hr>
+
+        <div class="row">
+            <div class="main-image col-12 center-text">
+                <img src="../images/events-title.jpg" sizes="100vw" alt="main image">
+                <div class="main-overlay center-text">
+                    <p class="main-overlay-text">문화행사</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="content">
+            <div class="searchPanel">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input id="search" type="text" name="search" placeholder="키워드 검색" class="search-input"
+                        onkeypress="search('events')">
+                </div>
+                <div class="category">
+                    <span class="search-title"><strong>분류</strong></span>
+                    <div>
+                        <a href="#" class="category-element" onclick="events('')">전체</a>
+                        <a href="#" class="category-element" onclick="events('A0207')">축제</a>
+                        <a href="#" class="category-element" onclick="events('A0208')">공연/행사</a>
+                    </div>
+                </div>
+            </div>
+            <div class="article-list">
+                <ul class="article-element">
+                    <script type="text/javascript">
+                        events('');
+                    </script>
+                </ul>
+            </div>
+        </section>
+        <footer>
+            <p>&copy; 숭실대학교 웹프로그래밍 9조</p>
+        </footer>
+    </div>
+</body>
+
+</html>

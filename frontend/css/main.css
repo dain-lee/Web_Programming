@@ -1,0 +1,302 @@
+.button {
+  width: 100px;
+  height: 40px;
+  display: inline-block;
+  border: 0px solid #666;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #666;
+  line-height: 40px;
+  font-size: 12px;
+  margin:10px;
+}
+
+.button:hover {
+  background-color: #000;
+}
+
+.dropbtn {
+  /* background-color: #ea2129; */
+  color: white;
+  /* padding: 16px; */
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* h1, h2, h3, h4, header, .main-overlay-text {
+  font-family: 'Noto Sans KR', sans-serif;
+} */
+
+h1 {
+  font-weight: 100;
+  font-size: 2.2em;
+  color: black;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 2em;
+  color: black;
+}
+
+h3{
+  font-weight: 700;
+  font-size: 1.5em;
+  color: black;
+}
+
+h4 {
+  font-weight: 700;
+  font-size: 1.2em;
+  color: black;
+}
+
+p {
+  font-weight: 500;
+  color: black;
+}
+
+hr {
+  border: 2px solid #bcbbbb;
+  margin: 10px;
+}
+
+a{
+  color:black;
+  padding:5px 0px 5px 0px;
+  text-decoration:none;
+}
+
+.work-repo {
+  color:black;
+}
+
+/***** GENERAL ******/
+img {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px 0 50px 0;
+}
+
+.main-image {
+  padding: 10px;
+}
+
+/***** HEADER ******/
+.header{
+  z-index: 9999;
+  /* background-color: dodgerblue; */
+}
+.header-image {
+  width: 100%;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.row {
+  align-items: center;
+}
+
+.name-title {
+  text-align: center;
+  line-height: 0;
+  clear: both;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+
+/***** Main Image ******/
+.main-image {
+  position: relative;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.main-overlay {
+  position: absolute;
+  top: -410px;
+  left: 10px;
+  color: #fff;
+  z-index: 100;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  transition: all 0.3s ease-in-out;
+}
+
+.main-overlay-text {
+  font-size: 1.6em;
+  padding-top: 20px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.main-image:hover .main-overlay {
+  top: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/***** About ******/
+.feature-title {
+  padding-left: 30px;
+}
+
+.about {
+  padding: 10px;
+}
+
+/***** places & events ******/
+
+.work {
+  margin-bottom: 10px;
+}
+.work-background {
+  background-color: dodgerblue;
+  opacity: 0.3;
+}
+
+.review {
+  margin : 5px;
+  width: 100%;
+  height: 15px;
+}
+
+.each-work {
+  overflow: hidden;
+  position: relative;
+  margin-left: 10px;
+}
+
+.col-4.work {
+  width: 50%;
+
+}
+
+.center-text {
+  text-align: center;
+}
+
+.work-detail {
+  position: relative;
+  padding: 0px 10px 0 10px;
+}
+
+.work-title {
+  font-size: 1.0em;
+  margin: 10px 0 15px 0;
+  line-height: 0;
+  clear: both;
+}
+
+.work-repo {
+  word-wrap: break-word;
+}
+
+.work-overlay {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  color: #333;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+  background: #fff;
+  opacity: 0;
+}
+
+.each-work:hover .work-overlay {
+  left: -10px;
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
+}
+
+/***** FOOTER ******/
+footer {
+  width: 100%;
+  height: auto;
+  padding: 10px 0px 10px 0px;
+  text-align: center;
+  background-color: #eee;
+  color: #666;
+}
+
+@media screen and (min-width: 620px) {
+
+  h1 {
+    font-size: 2.7em
+  }
+
+  .main-overlay-text {
+    font-weight: 500;
+    font-size: 5em;
+    padding-top: 70px;
+  }
+
+
+  .col-6.profile-title {
+    width: 50%;
+  }
+
+  .profile-image {
+    width: 100px;
+  }
+
+  .col-4.about-flex {
+    width: 33.33%;
+  }
+  .col-8.about-flex {
+    width: 66.66%;
+  }
+
+  .work {
+    margin-bottom: 20px;
+  }
+
+  .work-title {
+    font-size: 1.5em;
+    margin: 25px 0 30px 0;
+  }
+
+  .col-4.work {
+    width: 33.33%;
+  }
+}
+
+

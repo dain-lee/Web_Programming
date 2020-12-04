@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SEOUL TRAVEL</title>
+  <link href="http://fonts.googleapis.com/css?family=Roboto:400,100" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <link rel="stylesheet" href="../css/grid.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/search.css">
+  <script src="../js/review.js"></script>
+  <script> $(document).ready(function (e) {
+     $('form').submit(function () {
+                
+                 console.log($('.review').val(),Number($('.review').attr('id')))
+              
+                $.ajax({
+                     type: "put",
+                     url: 'http://localhost:7000/admin/review',
+                      datatype: 'json',
+                      contentType: "application/json; charset=utf-8",
+                     data:JSON.stringify({locationId:1,destDescription:$('.review').val()||null,destId:Number($('.review').attr('id'))}),
+                    success: function(data){
+            
+                      console.log(data)
+                      }
+                     }) 
+              
+                event.preventDefault();
+            });
+})</script>
+</head>
+
+<body>
+  <!-- Main Container -->
+  <div class="container">
+
+    <!-- Header -->
+    <header class="header">
+      <nav class="row">
+        <div class="col-2"><a href="../main.html">
+            <img src="../images/ssss.png" alt="Logo Image" class="header-image">
+          </a>
+        </div>
+
+        <div class="col-2 dropdown">
+          <div class="dropbtn">
+            <h3 class="name-title">지역</h3>
+            <h4 class="name-title">Area</h4>
+          </div>
+          <div class="dropdown-content">
+            <a href="gangnam.html">강남</a>
+            <a href="hongdae.html">홍대</a>
+            <a href="gwanghwamun.html">광화문</a>
+            <a href="itaewon.html">이태원</a>
+            <a href="jamsil.html">잠실</a>
+            <a href="myeongdong.html">명동</a>
+            <a href="#">기타</a>
+          </div>
+        </div>
+        <div class="col-2"><a href="events.html">
+            <h3 class="name-title">문화 행사</h3>
+            <h4 class="name-title">Events</h4>
+          </a></div>
+
+        <div class="col-2"><a href="attraction.html">
+            <h3 class="name-title">관광지</h3>
+            <h4 class="name-title">Attraction</h4>
+          </a></div>
+
+        <div class="col-2"><a href="mypage.html">
+            <h3 class="name-title">마이페이지</h3>
+            <h4 class="name-title">Mypage</h4>
+          </a></div>
+        <div class="col-2"><a href="../login.html">
+            <h3 class="name-title">로그인</h3>
+            <h4 class="name-title">Login</h4>
+          </a></div>
+      </nav>
+    </header>
+
+    <hr>
+
+    <!-- Main Image -->
+    <div class="row">
+      <div class="main-image col-12 center-text">
+        <img src="../images/gangnam/gangnam.jpg" sizes="100vw" alt="main image">
+        <div class="main-overlay center-text">
+          <p class="main-overlay-text">Gangnam</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- About -->
+    <section class="row">
+      <div class="col-12 feature-title">
+        <h2>강남</h2>
+      </div>
+
+      <div class="row about">
+        <p>
+          강남구는 서울특별시의 남동부에 있는 구입니다.
+          동쪽으로는 송파구, 서쪽으로는 서초구, 북쪽으로는 한강을 경계로 용산구, 성동구, 광진구, 남쪽으로는 경기도 성남시와 접하고 있습니다.
+          한강 이남에 위치해서 강남이란 이름이 붙었습니다.
+
+          <br /><br />
+          대한민국 최고의 부촌이며, 테헤란로 일대에 업무지구가 형성되었습니다.
+        </p>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- Featured Works -->
+    <div class="row">
+      <div class="col-12 feature-title">
+        <h2>여행지</h2>
+      </div>
+
+
+      <div class="row">
+        <div class="col-8 center-text work">
+          <a href="details.html?contentid=229901">
+            <div class="each-work">
+              <img src="../images/gangnam/coex.jpg" alt="place image 1" class="left">
+              <div class="work-overlay">
+                <h2>코엑스</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-4 work">
+          <p class="each-work">
+            코엑스는 한국 종합전시장입니다. 전시장 뿐만 아니라 아쿠아리움, 쇼핑몰, 호텔 등 다양한 부대시설들이 있습니다.<br /><br />
+            코엑스 아쿠아리움은 ‘환상적인 물의 여행’을 테마로 16개 테마존에서 650여 종 4만여 마리의 수중생물들을 만날 수 있습니다.
+            <br /><br />
+            코엑스몰은 세계적인 건축설계사 겐슬러가 공간의 개방성과 연계성을 극대화하는 열린하늘 컨셉으로 디자인하였습니다.
+            패션, 뷰티, 라이프스타일, 다양한 카페와 레스토랑을 한 자리에서 모두 만날 수 있습니다.
+          </p>
+          <form id="review-form1">
+          <input class="review" placeholder="리뷰를 남겨주세요." id="1" ></input>
+          <input type="submit" value="등록" >
+          </form>
+          <div class="row">
+            <button class="button" display="block">LIKE</button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4 work">
+          <p class="each-work">
+            예술의전당(Seoul Arts Center)은 서울특별시 서초구 서초동에 위치한 대한민국 최대 규모의 종합 예술 시설입다. 음악당, 서예관, 미술관, 오페라하우스 등 문화복합센터로 되어
+            있습니다.
+            <br /><br />
+            예술의 전당의 중심이라 할 수 있는 오페라하우스는
+            대규모 오페라, 발레, 뮤지컬 공연 등이 이루어지는 2305석의 오페라 극장, 연극, 소규모 뮤지컬, 오페라 등이 공연되는 710석의 토월 극장, 소규모 실험 공연이 이루어지는 300~600석
+            가변식의 자유 소극장이 위치해 있습니다.
+          </p>
+          <textarea class="review">리뷰를 남겨주세요.</textarea>
+          <input type="submit" value="등록">
+          <div class="row">
+            <button class="button" display="block">LIKE</button>
+          </div>
+        </div>
+        <div class="col-8 center-text work">
+          <a href="details.html?contentid=129747">
+            <div class="each-work">
+              <img src="../images/gangnam/art.jpg" alt="place image 2" class="right">
+              <div class="work-overlay">
+                <h2>예술의 전당</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-8 center-text">
+          <a href="details.html?contentid=987720">
+            <div class="each-work">
+              <img src="../images/gangnam/garosu.jpg" alt="place image 3" class="left">
+              <div class="work-overlay">
+                <h2>가로수길</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-4">
+          <p class="each-work">
+            ‘예술가의 거리’ 라 불리는 신사동 가로수길 주위로는 아기자기한 커피숍과 맛집, 디자이너들의 옷 매장들이 즐비해 있어 이국적인 분위기를 연출합니다.
+
+            <br /><br />
+            이러한 신사동 가로수길만의 독특한 분위기 덕분에 평일에도 카메라를 들고 여기저기서 사진을 촬영하는 사람들의 모습을 종종 볼 수 있습니다.
+            특히 젊은이들의 입소문을 타고 유명세를 탄 이후 많은 영화의 배경지로 나오기도 했습니다.
+          </p>
+          <textarea class="review">리뷰를 남겨주세요.</textarea>
+          <input type="submit" value="등록">
+          <div class="row">
+            <button class="button" display="block">LIKE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- 문화행사 -->
+    <div class="row">
+      <div class="col-12 feature-title">
+        <h2>엔터테인먼트</h2>
+      </div>
+      <!-- Work 1 -->
+      <section class="col-4 center-text work">
+        <a href="details.html?contentid=130284">
+          <div class="each-work">
+            <img src="../images/gangnam/entertain1.jpg" alt="work image 1" class="left">
+            <div class="work-overlay">
+              <h4>온가족이 함께 즐기는 곳!<br>
+                4만여 수중생물이 사는 곳!<br>
+                물속 세상을 만나는 곳!<br></h4>
+            </div>
+          </div>
+        </a>
+
+        <div class="work-detail">
+          <h3 class="work-title work-side">코엑스 아쿠아리움</h3>
+        </div>
+      </section>
+
+      <!-- Work 2 -->
+      <section class="col-4 center-text work">
+        <a href="details.html?contentid=131903">
+          <div class="each-work">
+            <img src="../images/gangnam/entertain2.jpg" alt="work image 2">
+            <div class="work-overlay">
+              <h4>도심속에서 즐기는 한국의 즐거움!<br>
+                동양적인 분위기와 최첨단 설비를 갖춘<br> 한국형 카지노입니다.</h4>
+            </div>
+          </div>
+        </a>
+
+        <div class="work-detail">
+          <h3 class="work-title">세븐럭 카지노</h3>
+        </div>
+
+      </section>
+
+      <!-- Work 3 -->
+      <section class="col-4 center-text work">
+        <div class="each-work">
+          <img src="../images/gangnam/entertain3.jpg" alt="work image 3" class="right">
+          <div class="work-overlay">
+            <h4>금빛 도시 속 파란 한강으로의 여행<br>
+              여유롭고 프라이빗한 일상을 선사합니다.</h4>
+          </div>
+        </div>
+
+        <div class="work-detail">
+          <h3 class="work-title work-side">골든블루마리나</h3>
+        </div>
+      </section>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 숭실대학교 웹프로그래밍 9조</p>
+    </footer>
+
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+.heading {
+  position: relative;
+}
+.logo {
+  margin-left: 4.8rem;
+}
+
+.welcometosignin {
+  width: 17.5rem;
+  height: 8rem;
+  font-family: Lato;
+  font-size: 0.8rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.85;
+  letter-spacing: normal;
+  text-align: center;
+  color: #727272;
+
+  margin-top: 0.8rem;
+}
+.welcometosignin a {
+  letter-spacing: normal;
+  text-align: center;
+  color: #214081;
+
+  margin-top: 0.8rem;
+}
+.userinput {
+  position: relative;
+  margin-top: 1rem;
+  width: 20rem;
+  height: 2.5rem;
+  border-radius: 0.25rem;
+  border: solid 1px #e3e3e6;
+  background-color: #ffffff;
+}
+.passwordinput {
+  position: relative;
+  margin-top: 0.3rem;
+  width: 20rem;
+  height: 2.5rem;
+  border-radius: 0.25rem;
+  border: solid 1px #e3e3e6;
+  background-color: #ffffff;
+}
+.middleLocation {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.SigninButton {
+  margin-top: 0.3rem;
+  width: 20rem;
+  height: 2.7rem;
+  border-radius: 0.25rem;
+  background-color: #214081;
+  color: #ffffff;
+}

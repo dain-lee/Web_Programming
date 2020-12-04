@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SEOUL TRAVEL</title>
+  <link href="http://fonts.googleapis.com/css?family=Roboto:400,100" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <link rel="stylesheet" href="../css/grid.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/search.css">
+  <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="../js/likes.js"></script>
+  <script src="../js/review.js"></script>
+  <script> $(document).ready(function (e) {
+     
+                
+                 
+              
+                $.ajax({
+                     type: "get",
+                     url: 'http://localhost:7000/admin/like/list',
+                      datatype: 'json',
+                      contentType: "application/json; charset=utf-8",
+                   
+                    success: function(data){
+            
+                      console.log(data)
+                      }
+                     }) 
+
+            });
+</script>
+</head>
+
+<body>
+  <!-- Main Container -->
+  <div class="container">
+
+    <!-- Header -->
+    <header class="header">
+      <nav class="row">
+        <div class="col-2"><a href="../main.html">
+            <img src="../images/ssss.png" alt="Logo Image" class="header-image">
+          </a>
+        </div>
+
+        <div class="col-2 dropdown">
+          <div class="dropbtn">
+            <h3 class="name-title">지역</h3>
+            <h4 class="name-title">Area</h4>
+          </div>
+          <div class="dropdown-content">
+            <a href="gangnam.html">강남</a>
+            <a href="hongdae.html">홍대</a>
+            <a href="gwanghwamun.html">광화문</a>
+            <a href="itaewon.html">이태원</a>
+            <a href="jamsil.html">잠실</a>
+            <a href="myeongdong.html">명동</a>
+            <a href="#">기타</a>
+          </div>
+        </div>
+        <div class="col-2"><a href="events.html">
+            <h3 class="name-title">문화 행사</h3>
+            <h4 class="name-title">Events</h4>
+          </a></div>
+
+        <div class="col-2"><a href="attraction.html">
+            <h3 class="name-title">관광지</h3>
+            <h4 class="name-title">Attraction</h4>
+          </a></div>
+
+        <div class="col-2"><a href="../mypage.html">
+            <h3 class="name-title">마이페이지</h3>
+            <h4 class="name-title">Mypage</h4>
+          </a></div>
+        <div class="col-2"><a href="../login.html">
+            <h3 class="name-title">로그인</h3>
+            <h4 class="name-title">Login</h4>
+          </a></div>
+      </nav>
+    </header>
+
+    <hr>
+
+    <main role="main">
+
+        <section class="jumbotron text-center">
+          <div class="container">
+            <h1>마이 페이지</h1>
+            <!-- <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+            <p>
+              <a href="#" class="btn btn-primary my-2">Main call to action</a>
+              <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+            </p> -->
+          </div>
+        </section>
+      
+        <div class="album py-5 bg-light">
+          
+      
+              
+            
+          
+          <div class="container-mypage">
+            <h2>좋아요</h2>
+            <div class="likes" style="display: flex;flex-wrap: wrap; ">
+             
+                <script>
+                    likeCards();
+                </script>
+              
+      
+              
+            </div>
+          </div>
+          <div class="container-mypage">
+            <h2>나의 리뷰</h2>
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">지역</th>
+                    <th scope="col">관광지</th>
+                    <th scope="col">나의 리뷰</th>
+                  </tr>
+                </thead>
+                <tbody class="tbody">
+                    <script>
+                  reviewTable();
+                </script>
+                </tbody>
+              </table>
+              
+            
+      
+              
+            </div>
+          </div>
+        </div>
+      
+      </main>
+
+ 
+    
+
+        
+      
+    
+    
+        
+     
+ 
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 숭실대학교 웹프로그래밍 9조</p>
+    </footer>
+
+  </div>
+
+</body>
+
+</html>
