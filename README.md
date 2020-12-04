@@ -68,3 +68,6 @@ npm start
 
 
 
+# HOME PAGE
+
+- frontend 폴더의 main.html 실행
